@@ -4,9 +4,13 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const port = process.env.port || 5000;
 const Routes = require("./Routes");
+const compression = require("compression");
+
 
 app = express();
 app.use(express.json());
+app.use(compression());
+
 
 app.use(cors());
 
